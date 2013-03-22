@@ -1,0 +1,44 @@
+PXDrum "Quick Start" (PSP version)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+When PXDrum has loaded, you have a empty song.
+
+Move the yellow cursor using the PSP analog stick.
+
+Right-click (press CIRCLE button) when the cursor is over the Song name (it 
+should say "<empty>") to bring up the File Menu.
+
+In the File Menu, use the up / down arrow keys to highlight the option 
+"Load Song", then press the X button. You will be given a list of the songs 
+in the "songs" folder of PXDrum.
+
+Use the up / down arrow keys to highlight the song "groove1.xds", then press 
+X button to select it. 
+
+The song will be loaded into PXDrum, and you will be back at the PXDrum main 
+screen.
+
+Press START button to start or stop playback of the song.
+
+Press SELECT to change the playback mode from "Pattern" to "Song" to "Live".
+
+Press SQUARE button rewind the song or pattern (depending on the playback mode).
+
+Press Left Shoulder Button or Right Shoulder Button keys to change the current 
+pattern to the previous/next pattern.
+
+Click in the "Vol" bar to change main volume.
+
+Click in the BPM bar to change playback speed.
+
+Press CIRCLE button over any area of the screen will bring up a menu for the 
+object underneath the cursor.
+
+Press TRIANGLE button to bring up the main menu.
+
+You should be able to figure out how most of PXDrum works by left-clicking 
+(press X button) or right-clicking (press CIRCLE button) on objects.
+
+
+See "manual.txt" for more information on using PXDrum.

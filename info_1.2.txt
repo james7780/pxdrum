@@ -1,0 +1,21 @@
+New in v1.2:
+  - Better timing (BPM is now far more accurate).
+  - Updated disco and reggae examples.
+  - Grid cursor mouse and arrow movement now locked together.
+  - Made UI more customisable (textures.bmp now holds gui colours).
+  - Icons for PSP XMB.
+  - Added "Record to WAV" function.
+  - Added simple "VU meter" (in place of Pitch bar).
+  - Increased song sequence length to 100 patterns.
+  - Add "Jump to" option in sequence menu.
+  - Increased number of patterns to 50.
+  - Pattern list now "follows" current pattern (like sequence list follows 
+    current song position).
+  - Implemented minor "joystick mouse" acceleration.
+  - Implemented control using PSP headphone remote (PSP only).
+  - Shuffle value and VolRand value now displayed in "Info Panel".
+
+*** NB: PXDrum v1.0 and v1.1 will NOT be able to load songs saved with 
+***     PXDrum v1.2 or newer !!! 
+
+

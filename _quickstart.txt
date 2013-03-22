@@ -1,0 +1,32 @@
+PXDrum "Quick Start"
+~~~~~~~~~~~~~~~~~~~
+
+
+When PXDrum has loaded, you have a empty song.
+
+Right-click on the Song name (it should say "<empty>") to bring up the File Menu.
+
+In the File Menu, use the up / down arrow keys to highlight the option "Load Song", then press ENTER. You will be given a list of the songs in the "songs" folder of PXDrum.
+
+Use the up / down arrow keys to highlight the song "groove1.xds", then press ENTER to select it. 
+
+The song will be loaded into PXDrum, and you will be back at the PXDrum main screen.
+
+Press SPACE to start or stop playback of the song.
+
+Press M to change the playback mode from "Pattern" to "Song" to "Live".
+
+Press R to rewind the song or pattern (depending on the playback mode).
+
+Press PgUp or PgDn keys to change the current pattern.
+
+Click in the "Vol" bar to change main volume.
+
+Click in the BPM bar to change playback speed.
+
+
+
+You should be able to figure out how most of PXDrum works by left-clicking or right-clicking on objects.
+
+
+See "manual.txt" for more information on using PXDrum.

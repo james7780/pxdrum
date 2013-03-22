@@ -1,0 +1,441 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+  
+    <title>SDL_Mixer Tutorial</title>
+  </head><body>
+
+<center><h2>SDL_Mixer Tutorial</h2></center>
+
+<p> 
+I have a horrible secret to confess:  None of my games have music.
+      Absolutely none of them.  This is mainly because I've never
+      taken the time to master any of the music libraries available to
+      me - thus any music addition got put off until later.  This
+      eventually became 'never'.  These games were small affairs, so
+      they were hardly expected to have good graphics or sound.  
+</p>
+<p>
+Since I'm in the process of creating a game I'd actually like to share
+      with the public, however, I figured I should finally pick it
+      up.  And now that I have a pretty basic understanding of what's
+      going on, I'm going to share it with you :)
+</p>
+
+<hr>
+<h3>Part 1: Making Music</h3>
+<p>
+Some of you may be wondering why I'm putting music before sound
+      effects.  Wouldn't sound effects be easier?  In a word, no.  The
+      SDL_Mixer library has a specialized channel devoted entirely to
+      music, and has a number of functions just for that.  It's
+      a slightly easier place to begin.
+</p>
+<p>
+</p><p>
+Here are the steps in using SDL_Mixer in your program - keep in mind
+      these aren't hard rules, this is just what I've done in the
+      examples below:
+</p>
+<ul>
+<li>Open up the audio device
+</li><li>Load samples into memory
+</li><li>Play them when necessary
+</li><li>Clean up
+</li></ul>
+<p>
+Here's an example to get started.  Note that all the functions from
+      SDL_Mixer start with the prefix Mix_.  If you're like me, you
+      got confused and thought that all the Mix_ functions did
+      mixing.  It's actually just convention:
+</p>
+<blockquote><pre>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include "SDL.h"
+#include "SDL_mixer.h"
+
+/* Mix_Music actually holds the music information.  */
+Mix_Music *music = NULL;
+
+void handleKey(SDL_KeyboardEvent key);
+void musicDone();
+
+int main(void) {
+
+  SDL_Surface *screen;
+  SDL_Event event;
+  int done = 0;
+
+  /* We're going to be requesting certain things from our audio
+     device, so we set them up beforehand */
+  int audio_rate = 22050;
+  Uint16 audio_format = AUDIO_S16; /* 16-bit stereo */
+  int audio_channels = 2;
+  int audio_buffers = 4096;
+
+  SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
+
+  /* This is where we open up our audio device.  Mix_OpenAudio takes
+     as its parameters the audio format we'd /like/ to have. */
+  if(Mix_OpenAudio(audio_rate, audio_format, audio_channels, audio_buffers)) {
+    printf("Unable to open audio!\n");
+    exit(1);
+  }
+
+  /* If we actually care about what we got, we can ask here.  In this
+     program we don't, but I'm showing the function call here anyway
+     in case we'd want to know later. */
+  Mix_QuerySpec(&amp;audio_rate, &amp;audio_format, &amp;audio_channels);
+
+  /* We're going to be using a window onscreen to register keypresses
+     in.  We don't really care what it has in it, since we're not
+     doing graphics, so we'll just throw something up there. */
+  screen = SDL_SetVideoMode(320, 240, 0, 0);
+
+  while(!done) {
+    while(SDL_PollEvent(&amp;event)) {
+      switch(event.type) {
+      case SDL_QUIT:
+	done = 1;
+	break;
+      case SDL_KEYDOWN:
+      case SDL_KEYUP:
+	handleKey(event.key);
+	break;
+      }
+    }
+
+    /* So we don't hog the CPU */
+    SDL_Delay(50);
+
+  }
+
+  /* This is the cleaning up part */
+  Mix_CloseAudio();
+  SDL_Quit();
+
+}
+
+void handleKey(SDL_KeyboardEvent key) {
+  switch(key.keysym.sym) {
+  case SDLK_m:
+    if(key.state == SDL_PRESSED) {
+
+      /* Here we're going to have the 'm' key toggle the music on and
+	 off.  When it's on, it'll be loaded and 'music' will point to
+	 something valid.  If it's off, music will be NULL. */
+
+      if(music == NULL) {
+	
+	/* Actually loads up the music */
+	music = Mix_LoadMUS("music.ogg");
+
+	/* This begins playing the music - the first argument is a
+	   pointer to Mix_Music structure, and the second is how many
+	   times you want it to loop (use -1 for infinite, and 0 to
+	   have it just play once) */
+	Mix_PlayMusic(music, 0);
+
+	/* We want to know when our music has stopped playing so we
+	   can free it up and set 'music' back to NULL.  SDL_Mixer
+	   provides us with a callback routine we can use to do
+	   exactly that */
+	Mix_HookMusicFinished(musicDone);
+	
+      } else {
+	/* Stop the music from playing */
+	Mix_HaltMusic();
+
+	/* Unload the music from memory, since we don't need it
+	   anymore */
+	Mix_FreeMusic(music);
+	
+	music = NULL;
+      }
+      break;
+    }
+  }
+}
+
+/* This is the function that we told SDL_Mixer to call when the music
+   was finished. In our case, we're going to simply unload the music
+   as though the player wanted it stopped.  In other applications, a
+   different music file might be loaded and played. */
+void musicDone() {
+  Mix_HaltMusic();
+  Mix_FreeMusic(music);
+  music = NULL;
+}
+</pre></blockquote>
+<i>(A listing is available <a href="http://kekkai.org/roger/sdl/mixer/mixer1.c">here</a>.  <a href="http://www.dfan.org/honestbob/">Honest Bob and the
+   Factory-to-Dealer Incentives</a> was kind enough to donate their
+   song <a href="http://kekkai.org/roger/sdl/mixer/music.ogg">Another person you had sex with</a> for
+   people who wanted an ogg file to test their programs with.  Other
+   files are available on the <a href="http://www.vorbis.com/music.psp">Ogg vorbis downloads
+	page</a>.  Just remember to rename whatever you choose to
+   'music.ogg')</i>
+<p>
+The program can be compiled as follows:
+</p><blockquote><pre>gcc -g -o mixer1 mixer1.c `sdl-config --cflags --libs` -lSDL_mixer
+</pre></blockquote>
+<i>(Two notes:  One, the quotes surrounding the sdl-config command are
+      backticks, which you can find on the tilde (~) key.  Two, this
+      command will only work if you have SDL_mixer installed with the
+      same prefix (/usr, /usr/local/, etc.) as SDL.  If you do not,
+      you will need to add "-I/usr/local/include" and
+      "-L/usr/local/lib" (or wherever SDL_mixer is installed) to the
+      command.)</i>
+<p></p>
+<p>
+If everything works, you should see a blank window appear on the
+      screen.  Make sure it has focus, and press the 'm' key to
+      hopefully hear some music.  Play around with toggling the music
+      on and off.  If you don't hear music, make sure you have the
+      music.ogg file in the same directory as the program.
+</p>
+<p>
+With this information alone, you could probably code some background
+      music for your next game.  But you've gone this far - why not
+      add some sound effects while you're at it?
+</p>
+
+<h3>Part 2: Making Noise</h3>
+<p>
+Here we're going to blast the heck out of our enemies with a
+      cool-sounding phaser.  The code here isn't much different than
+      the music, but there is some important stuff:
+</p>
+<blockquote><pre>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include "SDL.h"
+#include "SDL_mixer.h"
+
+/* Mix_Chunk is like Mix_Music, only it's for ordinary sounds. */
+Mix_Chunk *phaser = NULL;
+
+/* Every sound that gets played is assigned to a channel.  Note that
+   this is different from the number of channels you request when you
+   open the audio device; a channel in SDL_mixer holds information
+   about a sound sample that is playing, while the number of channels
+   you request when opening the device is dependant on what sort of
+   sound you want (1 channel = mono, 2 = stereo, etc) */
+int phaserChannel = -1;
+
+void handleKey(SDL_KeyboardEvent key);
+
+int main(void) {
+
+  SDL_Surface *screen;
+  SDL_Event event;
+  int done = 0;
+
+  /* Same setup as before */
+  int audio_rate = 22050;
+  Uint16 audio_format = AUDIO_S16; 
+  int audio_channels = 2;
+  int audio_buffers = 4096;
+
+  SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
+
+  if(Mix_OpenAudio(audio_rate, audio_format, audio_channels, audio_buffers)) {
+    printf("Unable to open audio!\n");
+    exit(1);
+  }
+
+  /* We're going to pre-load the sound effects that we need right here
+   */
+  phaser = Mix_LoadWAV("phaser.wav");
+
+  screen = SDL_SetVideoMode(320, 240, 0, 0);
+
+  while(!done) {
+    while(SDL_PollEvent(&amp;event)) {
+      switch(event.type) {
+      case SDL_QUIT:
+	done = 1;
+	break;
+      case SDL_KEYDOWN:
+      case SDL_KEYUP:
+	handleKey(event.key);
+	break;
+      }
+    }
+    SDL_Delay(50);
+
+  }
+
+  Mix_CloseAudio();
+  SDL_Quit();
+
+}
+
+void handleKey(SDL_KeyboardEvent key) {
+  switch(key.keysym.sym) {
+  case SDLK_p:
+
+    /* We're going to have the phaser continually fire as long as
+       the user is holding the button down */
+    if(key.type == SDL_KEYDOWN) {
+
+      if(phaserChannel &lt; 0) {
+
+	/* Mix_PlayChannel takes, as its arguments, the channel that
+	   the given sound should be played on, the sound itself, and
+	   the number of times it should be looped.  If you don't care
+	   what channel the sound plays on, just pass in -1.  Looping
+	   works like Mix_PlayMusic. This function returns the channel
+	   that the sound was assigned to, which you'll need later. */
+	phaserChannel = Mix_PlayChannel(-1, phaser, -1);
+	
+      }
+    } else {
+      /* Mix_HaltChannel stops a certain channel from playing - this
+	 is one of the reasons we kept track of which channel the
+	 phaser had been assigned to */
+      Mix_HaltChannel(phaserChannel);
+      
+      phaserChannel = -1;
+    }
+    break;
+  }
+}
+</pre></blockquote>
+<i>(A listing is available <a href="http://kekkai.org/roger/sdl/mixer/mixer2.c">here</a>.  <a href="http://kekkai.org/roger/sdl/mixer/phaser.wav">Here</a>'s a phaser noise which comes with the
+    <a href="http://www.openal.org/">OpenAL</a> library.)</i>
+<p>
+The program can be compiled as follows:
+</p><blockquote><pre>gcc -g -o mixer2 mixer2.c `sdl-config --cflags --libs` -lSDL_mixer
+</pre></blockquote>
+<p></p>
+<p>
+Once again, you'll see a blank window appear - pressing and holding
+the 'p' key results in a phaser noise if everything worked well.
+Don't forget to have a phaser.wav file in your directory!
+</p>
+
+<h3>Part 3: Mixing It All Together</h3>
+<p>
+Of course, it wouldn't be a very good mixer if it didn't mix sounds
+together.  What do you need to do in order to have your music and
+sound effects mixed?  Nothing - the Mix_PlayChannel and Mix_PlayMusic
+functions handle the mixing for you, you just need to call them.
+Below is a program that's really not much more than the other two
+programs put together:
+</p>
+<blockquote><pre>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include "SDL.h"
+#include "SDL_mixer.h"
+
+Mix_Chunk *phaser = NULL;
+Mix_Music *music = NULL;
+
+int phaserChannel = -1;
+
+void handleKey(SDL_KeyboardEvent key);
+void musicDone();
+
+int main(void) {
+
+  SDL_Surface *screen;
+  SDL_Event event;
+  int done = 0;
+
+  /* Same setup as before */
+  int audio_rate = 22050;
+  Uint16 audio_format = AUDIO_S16; 
+  int audio_channels = 2;
+  int audio_buffers = 4096;
+
+  SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
+
+  if(Mix_OpenAudio(audio_rate, audio_format, audio_channels, audio_buffers)) {
+    printf("Unable to open audio!\n");
+    exit(1);
+  }
+
+  /* Pre-load sound effects */
+  phaser = Mix_LoadWAV("phaser.wav");
+
+  screen = SDL_SetVideoMode(320, 240, 0, 0);
+
+  while(!done) {
+    while(SDL_PollEvent(&amp;event)) {
+      switch(event.type) {
+      case SDL_QUIT:
+	done = 1;
+	break;
+      case SDL_KEYDOWN:
+      case SDL_KEYUP:
+	handleKey(event.key);
+	break;
+      }
+    }
+    SDL_Delay(50);
+
+  }
+
+  Mix_CloseAudio();
+  SDL_Quit();
+
+}
+
+void handleKey(SDL_KeyboardEvent key) {
+  switch(key.keysym.sym) {
+  case SDLK_p:
+
+    if(key.type == SDL_KEYDOWN) {
+
+      if(phaserChannel &lt; 0) {
+	phaserChannel = Mix_PlayChannel(-1, phaser, -1);
+      }
+    } else {
+      Mix_HaltChannel(phaserChannel);
+      
+      phaserChannel = -1;
+    }
+    break;
+  case SDLK_m:
+    if(key.state == SDL_PRESSED) {
+
+      if(music == NULL) {
+	
+	music = Mix_LoadMUS("music.ogg");
+	Mix_PlayMusic(music, 0);
+	Mix_HookMusicFinished(musicDone);
+	
+      } else {
+	Mix_HaltMusic();
+	Mix_FreeMusic(music);
+	music = NULL;
+      }
+    }
+    break;
+  }
+}
+
+void musicDone() {
+  Mix_HaltMusic();
+  Mix_FreeMusic(music);
+  music = NULL;
+}
+</pre></blockquote>
+<i>(And here's your side of <a href="http://kekkai.org/roger/sdl/mixer/mixer3.c">listing</a>)</i>
+<p>
+And of course you can compile like this:
+</p><blockquote><pre>gcc -g -o mixer3 mixer3.c `sdl-config --cflags --libs` -lSDL_mixer
+</pre></blockquote>
+<p></p>
+<p>
+You'll see the ever-popular perfectly blank window.  Try pressing 'm'
+to start the music, then press and hold 'p' to hear the phaser play
+atop it.  With just a bit of code, you've got a working sound system.
+It wouldn't take many modifications to make it part of a game.
+</p>
+<hr>
+<a href="http://kekkai.org/roger/sdl/index.html">Back to the tutorial index</a>
+<br><br>
+<i>Copyright 2001, <a href="mailto:denor@yahoo.com">Roger
+Ostrander</a><i>
+  </i></i></body></html>

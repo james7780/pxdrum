@@ -1,0 +1,318 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="CREATED" CONTENT="20090408;19300473">
+	<META NAME="CHANGEDBY" CONTENT="James Higgs">
+	<META NAME="CHANGED" CONTENT="20090408;20062106">
+	<STYLE>
+	<!--
+		@page { size: 8.5in 11in; margin: 0.79in }
+		P { margin-bottom: 0.08in }
+		PRE { font-family: "Verdana" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<PRE>
+<H2>PXDrum v1.2 Manual</H2>
+<H3>Contents</H3>
+    <a href="#overview">Overview</a></br>
+    <a href="#gui">XDrum User Interface</a></br>
+        <a href="#controls">Controls</a></br>
+        <a href="#volbpmpanel">Volume / BMP Panel</a></br>
+        <a href="#infopanel">Info Panel</a></br>
+        <a href="#patlistpanel">Pattern List</a></br>
+        <a href="#seqlistpanel">Sequence List</a></br>
+        <a href="#trackinfopanel">Track Info Panel</a></br>
+        <a href="#patterngrid">Pattern Grid</a></br>
+    <a href="#loading">Loading / Saving Songs</a></br>
+    <a href="#example">Example Patterns/Songs</a></br>
+    <a href="#record">Record Song to WAV</a></br>
+    
+<a name="overview"></a>
+<H3>Overview</H3>
+XDrum is a simple pattern-based drum sequencer. It can be used as:
+<OL>
+    <LI>A drum pattern &quot;sketchpad&quot;, for quickly composing drum patterns</LI> 
+    <LI>A drum sequencer (playing back a drum song)</LI> 
+    <LI>An emulator for sample-based drum machines</LI> 
+    <LI>A reference tool for real drummers for learning or referencing drum patterns</LI> 
+    <LI>A beat/timing aid for those learning/practising guitar / keyboard</LI> 
+    <LI>A &quot;Live&quot; drum machine for realtime performances</LI> 
+</OL>
+
+<a name="gui"></a>
+<H3>XDrum User Interface</H3>
+Although XDrum is fairly simple and intuitive, to use it properly you will 
+have to know what the various parts of the XDrum screen are for, and which 
+keys/buttons to press.
+
+The XDrum screen is split up into the folowing &quot;panels&quot;:
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH="25%">
+	<COL WIDTH="25%">
+	<COL WIDTH="50%">
+	<TR VALIGN=TOP>
+		<TD>Top Left</TD>
+		<TD>Vol/BPM Panel</TD>
+		<TD>Used to set main volume and playback speed	</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD>Top Centre	</TD>
+		<TD>Info Panel 	</TD>
+		<TD>Displays song name, drumkit name, playback mode and current pattern name</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD>Top Right	</TD>
+		<TD>Pattern list	</TD>
+		<TD>List of named patterns	</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD>Top Right (2)</TD>
+		<TD>Sequence</TD>
+		<TD>Song sequence list (sequence of patterns in the song)	</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD>Left</TD>
+		<TD>Track Info	</TD>
+		<TD>Track names and info </TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD>Middle/Right	</TD>
+		<TD>Pattern grid	</TD>
+		<TD>Displays the current drum pattern	</TD>
+	</TR>
+</TABLE>
+
+
+
+1. Right-clicking the mouse on the different panels of the XDrum screen will 
+   pop up a &quot;Context Menu&quot; with actions you can perform on the objects in that 
+   panel. 
+
+2. On PSP, press the X button to do a left-click, and CIRCLE button to do a 
+   right-click.
+
+<a name="controls"></a>
+<H4>Controls:</H4>
+When you are viewing the XDrum screen, the keys are (PC version):
+
+<TABLE WIDTH=665 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=106>
+	<COL WIDTH=541>
+	<TR VALIGN=TOP>
+		<TD>Esc </TD>
+		<TD>Bring up the <a href="#mainmenu">Main Menu</a></TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD>SPACE</TD>
+		<TD>Start or stop playback</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD>M</TD>
+		<TD>Change playback mode (Pattern / Song / Live)</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD>R</TD>
+		<TD>Rewind (Pattern / Song)</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD>X</TD>
+		<TD>Add a drum note at the current pattern grid cursor position	</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD>C</TD>
+		<TD>Cut the drum note at the current pattern grid cursor position	</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD>PGUP</TD>
+		<TD>Previous pattern</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD>PGDOWN</TD>
+		<TD>Next pattern</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD>ARROWS	</TD>
+		<TD>Move the pattern grid cursor</TD>
+	</TR>
+</TABLE>
+
+<H4>Menus:</H4>
+<a name="mainmenu"></a>
+    <B>Main Menu</B>:
+        File Menu
+        Pattern Menu
+        Sequence Menu
+        Options Menu
+        Help Menu
+        Quit
+        
+<a name="filemenu"></a>
+    <B>File Menu</B>:
+        Load Song
+        Save Song
+        Load Drumkit
+        Record to WAV
+
+<a name="patmenu"></a>
+    <B>Pattern Menu</B>:
+        Insert Pattern into Song
+        Copy Pattern
+        Paste Pattern
+        Rename Pattern
+
+<a name="seqmenu"></a>
+    <B>Sequence Menu</B>:
+        Insert Pattern into Song
+        Remove Pattern from Song
+
+<a name="trackmenu"></a>
+    <B>Track Menu</B>:
+        Track Vol %
+        Copy Track
+        Paste Track
+        Clear Track
+
+<a name="optionsmenu"></a>
+    <B>Options Menu</B>:
+        Shuffle
+        Jitter
+        VolRand
+        Flash on Beat
+
+<a name="notemenu"></a>
+    <B>Note Menu</B>:
+        Volume %
+        ???
+        ???
+
+<a name="volbpmpanel"></a>
+<H4>Vol/BPM Panel:</H4>
+This panel is used to set the main volume and playback speed (BPM).
+<UL>
+	<LI>Left-click in the volume bar to set the volume.
+	<LI>Left-click just above the volume bar to increment the volume.
+	<LI>Left-click just below the volume bar to decrement the volume.
+	<LI>Left-click in the BPM bar to set the BPM.
+	<LI>Left-click just above the BPM bar to increment the BPM.
+	<LI>Left-click just below the BPM bar to decrement the BPM.
+</UL>
+Right-click for the <a href="#volbpmmenu">Vol/BPM Menu</a>.
+
+
+<a name="infopanel"></a>
+<H4>Info Panel:</H4>
+This panel displays the Song name, Drumkit name, playback mode and current 
+pattern name. It also displays the Shuffle and VolRand (note randomisation) values.
+<UL>
+	<LI>Right-click on the song name for the <a href="#filemenu">File Menu</a>.
+	<LI>Right-click on the drumkit name for the <a href="#filemenu">File Menu</a>.
+	<LI>Left-click on the playback mode to cycle between Pattern/Song/Live modes.
+	<LI>Right-click on the pattern name display to display the <a href="#patmenu">Pattern Menu</a>
+</UL>
+    
+<a name="patlistpanel"></a>
+<H4>Pattern List Panel:</H4>
+The pattern list panel displays a list of the patterns in the current song.
+<UL>
+	<LI>Left-click on a pattern name in the list to make it the current pattern.
+	<LI>Right-click to bring up the <a href="#patmenu">Pattern Menu</a>
+</UL>
+
+<a name="seqlistpanel"></a>
+<H4>Sequence List Panel:</H4>
+The sequence list panel shows the playback order (sequence) of the patterns 
+in the song, when in &quot;Song&quot; playback mode.
+<UL>
+	<LI>Left-click on a pattern name in the list to make it the current pattern.
+	<LI>Right-click to bring up the <a href="#seqmenu">Sequence Menu</a>
+</UL>
+
+<a name="trackinfopanel"></a>
+<H4>Track Info Panel:</H4>
+The track info panel displays the name, mix vol and mute/solo status of all 
+8 tracks.
+<UL>
+	<LI>Left-click on the 'M' (mute) button in the track info panel to mute that track.
+	<LI>Left-click on the 'S' (solo) button in the track info panel to solo that track.
+	<LI>Left-click in the volume bar in the track info panel to adjust the mix volume for that track.
+	<LI>Right-click on a track in the track info panel to bring up the <a href="#trackmenu">Track Menu</a> for that track.
+</UL>
+
+<a name="patterngrid"></a>
+<H4>Pattern grid:</H4>
+The pattern grid displays the notes in the current pattern.
+The &quot;note edit cursor&quot; is displayed on the pattern grid. You can move it using 
+the arrow keys.
+
+PC version:
+<UL>
+	<LI>Left-click on a note in the grid to mark it as a &quot;note on&quot; (or &quot;drum hit&quot;)
+	<LI>Left-clicking on notes will cycle them between &quot;note on&quot;, &quot;accent&quot;, &quot;note cut&quot; and &quot;off&quot;.
+	<LI>Right-click on a note in the pattern grid to bring up the &lt;Note Menu&gt; for that note.
+</UL>
+
+PSP version:
+<UL>
+	<LI>Press X to mark the note under the &quot;note edit cursor&quot; a &quot;note on&quot; (or &quot;drum hit&quot;).
+	<LI>Pressing X button again will cycle the note between &quot;note on&quot;, &quot;accent&quot;, &quot;note cut&quot; and &quot;off&quot;.
+	<LI>Pressing CIRCLE button will bring up the &lt;Note Menu&gt; for the note UNDER the &quot;mouse&quot; cursor.
+</UL>
+
+<a name="loading"></a>
+<H3>Loading and Saving Songs</H3>
+A PXDrum song is a collection of patterns, and the sequence (order) in which the patterns are played back.
+
+To load a song: Right-click on the current song name in the <a href="#infopanel">Info Panel</a>, or press Esc key 
+(TRIANGLE on PSP) to bring up the <a href="#mainmenu">Main Menu</a>, and select <a href="#filemenu">File Menu</a>.
+The <a href="#filemenu">File Menu</a> will be displayed. Select "Load Song", then select the song you want to load 
+from the list of files displayed.
+
+To save a song: Right-click on the current song name in the <a href="#infopanel">Info Panel</a>, or press Esc key 
+(TRIANGLE on PSP) to bring up the <a href="#mainmenu">Main Menu</a>, and select <a href="#filemenu">File Menu</a>.
+The <a href="#filemenu">File Menu</a> will be displayed. Select "Save Song". You will be prompted to edit the name 
+of the song to be saved. <font color="red">!!! NB: If you enter the name of an existing song file, PXDrum will overwrite it without 
+warning you !!!</font>
+
+<a name="example"></a>
+Example drum patterns/songs:
+    - Groove pattern
+    - Disco patterns
+    - Reggae patterns
+    - Rock patterns
+    - Funk patterns
+    - Latin patterns
+    - my sharona
+    - funky cold medina
+
+<a name="record"></a>
+<H3>Record Song to WAV</H3>
+PXDrum can record your song (or part of your song) to a WAV file.
+
+The WAV file will be saved to the "wav" folder of PXDrum. The WAV format is stereo 16-bit PCM.
+
+To record a song to WAV:
+    1. Open the <a href="#filemenu">File Menu</a>
+    2. Select "Record to WAV"
+    3. You will be prompted to enter a filename for the WAV file.
+    4. Playback will be stopped
+    5. Set playback mode to "Song" 
+    6. Rewind the song
+    7. Play the song
+    8. The mouse cursor will change to say "REC"
+    9. The song output will be written to a WAV file as it is played back
+    10. The recording will stop when you stop playback
+
+Notes:
+    1. You can record in any playback mode (Song / Pattern / Live)
+    2. If you make changes to the current pattern while recording (eg: Mute a track),
+       then the effect of those changes will be recorded. ("What you hear is what you get").
+    
+</PRE>
+
+Updated JH 8/4/2009
+</BODY>
+</HTML>

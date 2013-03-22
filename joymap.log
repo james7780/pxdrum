@@ -1,0 +1,69 @@
+Opening joymap config file: joymap.cfg
+Command is # Joystick mapping file
+
+Comment encountered. Scanning till eol.
+Command is # Format: nn <SPACE> a
+
+Comment encountered. Scanning till eol.
+Command is # Keys can be: A-Z, ESCAPE, PGUP, PGDOWN, LEFT, RIGHT, UP, DOWN
+
+Comment encountered. Scanning till eol.
+Command is #
+
+Comment encountered. Scanning till eol.
+Command is # Button    Code
+
+Comment encountered. Scanning till eol.
+Command is # SQUARE    15
+
+Comment encountered. Scanning till eol.
+Command is # CIRCLE    13
+
+Comment encountered. Scanning till eol.
+Command is # UP        4
+
+Comment encountered. Scanning till eol.
+Command is # DOWN      6
+
+Comment encountered. Scanning till eol.
+Command is # RSB       11
+
+Comment encountered. Scanning till eol.
+Command is # START     3
+
+Comment encountered. Scanning till eol.
+Command is # R3        2
+
+Comment encountered. Scanning till eol.
+Command is 12 ESCAPE
+
+Command is 13 RCLICK
+
+Command is 14 LCLICK
+
+Command is 15 r
+
+Command is 10 PGUP
+
+Command is 11 PGDOWN
+
+Command is 6  DOWN
+
+Command is 7  LEFT
+
+Command is 4  UP
+
+Command is 5  RIGHT
+
+Command is 0  m
+
+Command is 3  SPACE
+
+Command is 
+
+Bad command on line 25
+Bad parameter on line 25
+Command is 
+
+Bad command on line 26
+Bad parameter on line 26

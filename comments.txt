@@ -1,0 +1,67 @@
+TODO:
+4. When starting up, should load last song?
+8. Windows app (and Linux app) can be changed to not show console window.
+9. Option for 3 beats / pattern
+12. Fix filename/folder length crash (make buffers longer).
+15. Icons for main vol label and BPM label
+18. Example songs:
+    - Groove pattern
+    - HIp-hop pattern
+    - Funky cool Medina
+    - Disco
+    - Pop
+    - Reggae
+    - Rock
+    - Ska
+    - Blues
+    - Boogie
+    - Funk
+    - my sharona
+    - funky cold medina
+
+
+
+
+DONE:
+1. *** DONE *** When starting up, should show splash-screen with loading bar
+2. *** DONE *** When loading song or drumkit, need progress bar or loading icon / message
+3. *** DONE *** Need to thin out "distribution" set of drumkits (only complete ones)
+5. *** DONE *** Mouse cursor should not follow grid cursor around when grid cursor moved with arrow keys.
+6. *** DONE *** When context menu for grid activated, options should apply to grid cursor position.
+10. *** DONE *** Beat markers (ie: every 4th tick should be highlighted)
+11. *** DONE *** Fix cursor transparency in PSP (issue with image width / height?)
+13. *** DONE *** Option to flash background on every beat (visual cue for live mode)
+14. *** DONE *** Context menu for Main Vol / BPM panel
+    - Set main vol% (Mute / 10 / 20 / 30 / 40 / 50 / 60 / 70 / 80 / 90 / 100)
+    - Set BPM (60 / 70 / 80 / 90/ 100 / 110 / 120 / 130 / 140)
+16. *** DONE *** Better timing using float tick counter
+17. *** DONE *** Prompt for save on exit
+19. *** DONE *** List of uses
+    - Portable drum pattern sketcher
+    - Portable drum sequencer
+    - Drum machine emulator
+    - Drum pattern learning/reference tool (for real drummers)
+    - Drum machine for backing while learning guitar / keyboard
+    - Live mode for use as a "Live" drum machine
+20. *** DONE *** Bug in selecting pattern in list when list scrolled
+21. *** DONE *** Song list should start from 1
+22. *** DONE *** Song list should have more patterns (like 50, or make song length automatic)
+23. *** DONE *** When right-clicking on drumkit name, "Load Drumkit" should be highlighted in the menu.
+    (may also apply to other menus)
+24. *** DONE *** Remove "pitch" bar and use it's space for the Info Panel (or for a VU meter).
+25. *** DONE *** Make vol and BPM bars wider
+
+26. *** TRASHED *** Put little [+] and [-] icons next to vol and bpm bars (for fine adjust)
+27. *** DONE *** Joystick mouse should be "accelerated", or should move slower when not in pattern grid or Info Panel.
+    (ie: adjust joymouse speed according to zone).
+28. *** DONE *** Implement "Quit" option in main menu
+29. *** DONE *** "Songlist" menu should be renamed to "Sequence" menu.
+30. *** DONE *** Implement "shuffle" (delay every 2nd note (ie: delay every 8th 16th note))
+31. *** DONE *** Change name to "PXDrum"
+32. *** DONE *** Finish note menu (UNIMPLEMENTED STUFF)
+
+
+FUTURE:
+1. Implement Pan
+2. Implement MIDI export / import
+3. Track 8 can optionally be a bassline synth

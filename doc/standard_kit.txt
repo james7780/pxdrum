@@ -1,0 +1,19 @@
+XDrum Standard Kit
+~~~~~~~~~~~~~~~~~~
+
+All the drumkits supplied with XDrum have the same standard setup, so that if you decide to load a different drumkit to use with a song you have created, the drumkit sounds will not be mixed up.
+
+Since XDrum can handle only 8 drum sounds, the standard drumkit sounds are the most commonly used drum sounds in pop/rock.
+
+Track 1: Kick drum (bass drum)
+Track 2: Snare drum
+Track 3: Closed Hi-Hat
+Track 4: Open Hi-Hat
+Track 5: Clap
+Track 6: Tom 
+Track 7: Cowbell
+Track 8: Cabasa / Shaker
+
+It is of course possible to create your own drumkit that does not follow this standard. Just bear in mind that if you create a song using a non-standard drum sound mapping, it will not sound correct when played back using a standard drumkit.
+
+

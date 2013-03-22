@@ -1,0 +1,40 @@
+All skins need these files:
+
+
+font_8x8.bmp
+
+font_8x16.bmp
+
+bg.bmp
+
+cursor.bmp
+
+textures.bmp
+
+
+
+
+To create a new skin:
+
+
+1. Create a new folder under skins folder
+
+2. copy files in skins/default to your new folder
+
+3. Edit the images in your favourite image editor
+
+
+
+
+To use your new skin:
+
+1. Copy all the files in your skin folder to the gfx folder.
+
+
+To restore the original skin:
+
+1. Copy all the files in the skins/default folder to the gfx folder.
+
+
+JH 12/2/2009
+

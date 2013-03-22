@@ -1,0 +1,43 @@
+Customsing Drumkits:
+
+    - Default drumkit is the one that appears when you start up PXDrum.
+    - Setting default drumkit:
+        - Delete all files from "kits/default"
+        - Copy the drumkit files from drumkit you want as the default, into "kits/default" folder.
+        - eg: To make Alesis HR16A your default drumkit, copy all the files from 
+              "kits/[KB6]_Alesis_HR16A" folder into "kits/default folder".
+
+    - Creating a new drumkit:
+        - Make a new folder for the drumkit in the "kits" folder.
+        - Copy WAV sample files for the drumkit into the new drumkit folder.
+        - Copy "kit.cfg" file from another drumkit into the new drumkit folder.
+        - Edit the new "kit.cfg" file:
+                - On first line, change the name to your drumkit's name
+                - On the second line, change the author to your name
+                - On the track<n>= lines, associate your drum samples to a track
+                - Save your new kit.cfg
+                - Run PXDrum, and load your new drumkit
+                - If there are arrors, then look at the "loadkit.log" file in the pxdrum folder.
+
+
+Customising Graphics:
+
+    - Skins are in the "gfx/skins" folder
+    - Skin "default" must not be modified
+    - To set a skin as the default:
+        - Copy bitmaps from the skin's folder to the "gfx" folder
+        - Overwrite if prompted
+    - texture.bmp also sets the "background", "border", "separator" and "highlight" colours for the gui
+
+
+
+Customsing Key / Button mapping:
+
+- TODO (joymap.cfg)
+
+
+
+
+
+
+

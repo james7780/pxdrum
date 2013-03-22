@@ -1,0 +1,1 @@
+Current PXDRUM source code version: 1.2

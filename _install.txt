@@ -1,0 +1,26 @@
+How to install PXDrum
+~~~~~~~~~~~~~~~~~~~~~
+
+Sony PSP:
+
+1. PXDrum will only run on PSP's with custom firmware.
+2. Copy "pxdrum_release2" to PSP/GAME folder on your PSP.
+3. Run XDrum using the "XDrum" icon in the GAME menu in the XMB.
+
+
+Ubuntu Linux (x86)
+
+1. Copy "pxdrum_release2" folder to your Desktop or home folder.
+2. Double-click "xdrum" file in the "pxdrum_release2" folder.
+
+
+Ubuntu Linux (Sony PS3)
+
+1. Copy "pxdrum_release2" folder to your Desktop or home folder.
+2. Double-click "xdrum.ps3" file in the "pxdrum_release2" folder.
+
+
+Windows
+
+1. Copy "pxdrum_release2" folder to your Desktop or "My Documents" folder.
+2. Double-click "xdrum.exe" file in the "pxdrum_release2" folder.

@@ -1,0 +1,30 @@
+Opening kit config file: kits/default/kit.cfg
+Command is name=Alesis HR16A
+
+Command is author=JH
+
+Bad command on line 2
+Bad parameter on line 2
+Command is # track<n>=<name>|mix|pan|<sample>
+
+Comment encountered. Scanning till eol.
+Command is track1=Kick|200|128|bd7.wav
+
+Command is track2=Snare|200|128|snar6.wav
+
+Command is track3=CHH|150|128|chh1.wav
+
+Command is track4=OHH|200|128|ohh1.wav
+
+Command is track5=Clap|200|128|clap.wav
+
+Command is track6=Tom|200|128|tom1.wav
+
+Command is track7=Cowbell|200|128|hicow.wav
+
+Command is track8=Cabasa|200|128|cabasa.wav
+
+Command is 
+
+Bad command on line 12
+Bad parameter on line 12

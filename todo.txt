@@ -1,0 +1,11 @@
+TODO
+
+1. Pitch control
+4. Wifi sync
+5. Nice drum sets
+	- Electronic
+	- Rock
+	- Jazz
+	- Beatbox
+6. Example drum patterns
+

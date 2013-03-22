@@ -1,0 +1,29 @@
+Kit Status - 24/2/2009
+
+Complete kits:
+[KB6]_Alesis_HR16A			Complete
+[KB6]_Casio_RZ1				Complete (sample names are crap)
+[KB6]_Korg_DDD-1			Complete
+[KB6]_Korg_ProWave			Complete
+[KB6]_Linn_LM-1				Complete
+[KB6]_Roland_CR78			Complete (NONSTANDARD - uses Shaker instead of CLap)
+[KB6]_Roland_CR8000			Conplete (NONSTANDARD - uses Rim in place of Cabasa)
+[KB6]_Roland_MT32			Complete
+[KB6]_Roland_TR505			Conplete (NONSTANDARD - uses Rim in place of Cabasa)
+[KB6]_SC_Studio-440			Complete (uses Conga instead of Tom)
+[KB6]_Yamaha_RX-21			Complete (uses Tambourine instead of Cabasa)
+[KB6]_Yamaha_TX16W			Complete
+
+
+Incomplete kits:
+[KB6]_Acetone_Rhythm-Ace	No cabasa/shaker sound
+[KB6]_Boss_DR-110			No Tom or Cowbell
+[KB6]_Casio_Rapman			No Tom or Cabasa/Shaker
+[KB6]_Casio_SK1				No Clap or Cowbell or Cabasa
+[KB6]_EMU_SP-12				No Cowbell or Cabasa
+[KB6]_Vermona_DRM1			Forget about it...
+
+
+Notes:
+1. Combine CR78 and CR8000 to create "Complete" CR7800
+

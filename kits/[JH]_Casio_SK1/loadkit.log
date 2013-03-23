@@ -1,0 +1,30 @@
+Opening kit config file: kits/[JH]_Casio_SK1/kit.cfg
+Command is name=JH Casio Sk1
+
+Command is author=JH
+
+Bad command on line 2
+Bad parameter on line 2
+Command is # track<n>=<name>|mix|pan|<sample>
+
+Comment encountered. Scanning till eol.
+Command is track1=Kick|200|128|kick.wav
+
+Command is track2=Snare|200|128|snare.wav
+
+Command is track3=CHH|150|128|chh.wav
+
+Command is track4=OHH|200|128|ohh.wav
+
+Command is track5=Cow Lo|200|128|cowbell_lo.wav
+
+Command is track6=Tom|200|128|tom.wav
+
+Command is track7=Cow Hi|200|128|cowbell_hi.wav
+
+Command is track8=SynDrum|200|128|synth drums.wav
+
+Command is 
+
+Bad command on line 12
+Bad parameter on line 12
